@@ -12,6 +12,15 @@ const red = document.querySelector('.red');
 const green = document.querySelector('.green');
 const yellow = document.querySelector('.yellow');
 
+const nightModeButton = document.querySelector('.night-mode-button')
+
+//modo noturno
+nightModeButton.onclick = () => {
+    aside.classList.toggle('night-mode');
+    aside.classList.toggle('day-mode');
+  };
+
+
 //cria ordem aletoria de cores
 let shuffleOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4);
@@ -19,20 +28,21 @@ let shuffleOrder = () => {
     clickedOrder = [];
 
     for(let i in order) {
-        let elementColor = createColorElement(order[i]);
-        lightColor(elementColor, Number(i) + 1);
+        let elementColor = createColorElement(order[i]); 
+        lightColor(elementColor, Number(i) + 1);     
     }
 }
 
 //acende a proxima cor
 let lightColor = (element, number) => {
-    number = number * 500;
-    setTimeout(() => {
-        element.classList.add('selected');
-    }, number - 250);
-    setTimeout(() => {
-        element.classList.remove('selected');
-    },500);
+        number = number * 1000
+        setTimeout(() => {
+            element.classList.add('selected');
+        }, number - 650);
+
+        setTimeout(() => {
+            element.classList.remove('selected');
+        },number);
 }
 
 //checa se os botoes clicados são os mesmos da ordem gerada no jogo

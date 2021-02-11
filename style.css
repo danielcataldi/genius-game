@@ -3,6 +3,20 @@ body {
     background-color: rgb(186, 238, 221);
 }
 
+.night-mode-transition {
+    transition: 1s;
+}
+
+.night-mode-button {
+    border-radius: 25px 0 0 25px;
+    cursor: pointer;
+    font-size: 50px;
+    padding: 10px 50px 10px 10px;
+    position: absolute;
+    right: 0;
+    top: 70%;
+}
+
 .main-game {
     height: 100vh;
     width: 100vw;
@@ -20,6 +34,7 @@ body {
     border-radius: 100%;
     width: 500px;
     height: 500px;
+    cursor: pointer;
 }
 
 .blue {
